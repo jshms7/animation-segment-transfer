@@ -1,0 +1,143 @@
+[gd_scene format=3]
+
+[sub_resource type="Animation" id="Animation_5hjng"]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Right:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.25, 1.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Left:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.25, 1.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_d6po2"]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Left:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.2, 0.6, -0.2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Right:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.2, -0.6, 0.2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Center:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.3, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Center:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [380.0, 330.0, 380.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ytiva"]
+_data = {
+&"destination": SubResource("Animation_5hjng"),
+&"source": SubResource("Animation_d6po2")
+}
+
+[node name="SegmentDemo" type="Node2D" unique_id=1657372274]
+
+[node name="Instructions" type="Label" parent="." unique_id=82462718]
+offset_left = 35.0
+offset_top = 25.0
+offset_right = 35.0
+offset_bottom = 25.0
+text = "1. Install and open the demo.
+This demo opens with the plugin enabled.
+2. Choose and preview.
+Select AnimationPlayer in the Scene tree.
+In Segment Transfer, choose source and destination.
+Check Left:rotation, Right:rotation and Center:rotation.
+Leave Center:position:y unchecked. Set Start = End = 1 second.
+Preview: 3 keys, 1 new track.
+3. Transfer, inspect, then undo or save.
+Click Transfer. Inspect destination in the native Animation timeline.
+Use normal Undo/Redo, or save the scene."
+
+[node name="Left" type="Polygon2D" parent="." unique_id=1512349176]
+position = Vector2(230, 380)
+color = Color(0.2, 0.75, 0.8, 1)
+polygon = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+
+[node name="@Label@2" type="Label" parent="." unique_id=1492996954]
+offset_left = 205.0
+offset_top = 450.0
+offset_right = 205.0
+offset_bottom = 450.0
+text = "Left"
+
+[node name="Center" type="Polygon2D" parent="." unique_id=1898652642]
+position = Vector2(450, 380)
+color = Color(1, 0.68, 0.28, 1)
+polygon = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+
+[node name="@Label@3" type="Label" parent="." unique_id=1312643735]
+offset_left = 425.0
+offset_top = 450.0
+offset_right = 425.0
+offset_bottom = 450.0
+text = "Center"
+
+[node name="Right" type="Polygon2D" parent="." unique_id=383350587]
+position = Vector2(670, 380)
+color = Color(0.75, 0.4, 0.85, 1)
+polygon = PackedVector2Array(-45, -45, 45, -45, 45, 45, -45, 45)
+
+[node name="@Label@4" type="Label" parent="." unique_id=2089540295]
+offset_left = 645.0
+offset_top = 450.0
+offset_right = 645.0
+offset_bottom = 450.0
+text = "Right"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=117691582]
+libraries/ = SubResource("AnimationLibrary_ytiva")
