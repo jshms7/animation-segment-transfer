@@ -6,6 +6,8 @@ Merge selected scalar property keys from one animation clip into another without
 
 Merge three selected keys into existing tracks, without copying whole tracks.
 
+Also available on the [Godot Store](https://store.godotengine.org/asset/origami-tools/animation-segment-transfer/). The quick start below covers the GitHub downloads.
+
 ## Quick start
 
 Use `animation-segment-transfer-v0.1.0-addon.zip` to install the add-on in an existing project. To try the ready-made example, use `animation-segment-transfer-v0.1.0-demo.zip`; only that download includes `project.godot` and `demo/demo.tscn`.
