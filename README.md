@@ -1,5 +1,7 @@
 # Animation Segment Transfer
 
+> **Safety notice — stop using v0.1.0.** Animation Segment Transfer v0.1.0 has a confirmed editing fault in Godot 4.7.2. After a transfer into an animation with a selected key, dragging a key and using Undo can move the wrong key and overwrite existing animation data. Stop using this version until a corrected release is available.
+
 Merge selected scalar property keys from one animation clip into another without copying whole tracks. Keys keep their original times; existing destination keys are not overwritten. Matching uses the full property path and track type, not row order.
 
 ![Three selected property tracks and a three-key preview in Godot's Segment Transfer dock beside the destination timeline.](docs/images/three-key-preview.png)
